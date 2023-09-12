@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Cards from "./components/Cards";
+import Data from "./Data";
 
-function App() {
+
+export default function App() {
+  const cards = Data.map((item) => {
+    return (
+      <Cards    
+              key={item.id}
+              //{...item} one more method but in this you need to remove .item from card.js
+              item={item}
+              /*img={item.coverImg} other method
+                rating={item.stats.rating}
+                reviewCount={item.stats.reviewCount}
+                country={item.location}
+                title={item.title}
+                price={item.price}
+                openSpots={item.openSpots}
+                location={item.location}*/
+     />
+    )
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Hero />
+      <section className="cards-list">
+                {cards}
+            </section>
     </div>
   );
 }
 
-export default App;
+
