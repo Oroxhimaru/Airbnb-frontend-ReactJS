@@ -1,43 +1,15 @@
-# Getting Started with Create React App
+# Airbnb Front Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/Oroxhimaru/Airbnb-frontend-ReactJS/assets/110180871/376e2c46-cc44-43c3-9303-ba6e68fc7027)
 
-## Available Scripts
+## PROBLEMS / SOLUTIONS
+ 1. The first problem I faced was the array were not exporting in main file. "export default const Data = []" this doesn't work and the reason is you need to store array data in variables coz of VS code but you can't export a const/variable into another file. So the solution is you need to store the array first like const Data = [...] AND IN LAST export default Data;
 
-In the project directory, you can run:
+2. I always import the image form local directory, that work for me for attaching the image like this import Star from "../images/Star.png";, but when I was trying that on props that doesn't work, which is obvious you need to give your local directory link to the array data e.g: "coverImg: "katie.png"" and then you need to write this on your image attributes src "../images/${props.item.coverImg}" but that doesn't work. The image was not showing up plus I got the solution from scrimba website they were saying to transfer the images to the public folder but that doesn't work for me. So the solution which work for me is that you need to write your dirctory address with props like this <img src={require(`../images/${props.item.coverImg}`)} alt="katie" className="card--image" /> This 'require' will make your image shows up frrom props.
+3.  Height issue all the images sign were not equal even though I was follwoing the the tutorial of scrimba you can solve that problem by just handling the css of height of image by yourself.
 
-### `npm start`
+ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 ## Learn More
 
@@ -45,26 +17,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
